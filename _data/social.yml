@@ -1,8 +1,12 @@
 - name: Facebook
-  link: 'https://www.facebook.com/comfusionllc'
+  link: 'https://www.facebook.com/hyejin9403'
   social_icon: Facebook
   new_window: true
-- name: RSS
-  link: '/feed.xml'
-  social_icon: RSS
+- name: Instagram
+  link: www.instagram.com/illyy94
+  social_icon: Instagram
+  new_window: true
+- name: Linkedin
+  link: www.linkedin.com/in/hyejin9403
+  social_icon: LinkedIn
   new_window: true
