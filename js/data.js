@@ -1,77 +1,174 @@
 const qnaList = [
     {
-        q: '친구들과 모임에서 당신은 어떤 역할을 맡고 있나요?',
+        q: '친구들과 모임에서 당신의 역할은 무엇인가요?',
         a: [
-            { answer: '모든 사람들을 챙기고 편안하게 만들어줘요', type: ['쏙쏙티'] },
-            { answer: '활기를 불어넣으며 분위기를 띄워요', type: ['밤비티'] },
-            { answer: '차분하고 현실적인 조언을 해줘요', type: ['콩콩티'] },
-            { answer: '따뜻한 마음으로 사람들을 배려해요', type: ['대추생강차'] }
+            {
+                answer: '사람들이 자연스럽게 어울릴 수 있도록 분위기를 조성해요',
+                type: { '쏙쏙티': 1, '호박차': 1 }
+            },
+            {
+                answer: '활기를 불어넣으며 분위기를 띄워요',
+                type: { '밤비티': 1, '진저레몬티': 1 }
+            },
+            {
+                answer: '필요할 때 조언을 제공하고, 주변을 잘 살펴요',
+                type: { '콩콩티': 1, '대추생강차': 1 }
+            },
+            {
+                answer: '사람들을 따뜻하게 맞이하고 배려해요',
+                type: { '대추생강차': 1, 'ABC티': 1 }
+            }
         ]
     },
     {
-        q: '당신의 이상적인 휴가 계획은 어떤가요?',
+        q: '휴가를 떠날 때, 당신의 선택은?',
         a: [
-            { answer: '조용하고 균형 잡힌 일정으로 쉬고 싶어요', type: ['ABC 티'] },
-            { answer: '짧고 상쾌하게 떠나 재충전하고 싶어요', type: ['진저레몬티'] },
-            { answer: '가족이나 친구들과 함께 편안한 시간을 보내고 싶어요', type: ['호박차'] },
-            { answer: '에너지가 넘치고 활동적인 여행을 가고 싶어요', type: ['생강차'] }
+            {
+                answer: '여유롭게 책이나 음악을 즐기며 조용한 휴식을 취해요',
+                type: { 'ABC티': 1, '쏙쏙티': 1 }
+            },
+            {
+                answer: '자연 속에서 새로운 환경을 경험해보고 싶어요',
+                type: { '진저레몬티': 1, '밤비티': 1 }
+            },
+            {
+                answer: '가족이나 친구들과 함께 시간을 보내며 힐링해요',
+                type: { '호박차': 1, '대추생강차': 1 }
+            },
+            {
+                answer: '액티비티와 모험이 가득한 활동적인 휴가를 원해요',
+                type: { '생강차': 1, '콩콩티': 1 }
+            }
         ]
     },
     {
-        q: '아침을 어떻게 시작하고 싶나요?',
+        q: '아침을 시작할 때 당신의 기분은 어떤가요?',
         a: [
-            { answer: '달콤하고 부드럽게 하루를 시작하고 싶어요', type: ['쏙쏙티'] },
-            { answer: '상쾌하고 활기차게 하루를 열고 싶어요', type: ['밤비티'] },
-            { answer: '고소하고 든든한 맛으로 하루를 채우고 싶어요', type: ['콩콩티'] },
-            { answer: '강한 맛으로 에너지를 충전하고 싶어요', type: ['생강차'] }
+            {
+                answer: '조용하고 차분한 마음으로 하루를 시작해요',
+                type: { '쏙쏙티': 1, '호박차': 1 }
+            },
+            {
+                answer: '활기차고 신선한 에너지를 얻고 싶어요',
+                type: { '밤비티': 1, '진저레몬티': 1 }
+            },
+            {
+                answer: '든든한 마음으로 천천히 하루를 준비해요',
+                type: { '콩콩티': 1, '대추생강차': 1 }
+            },
+            {
+                answer: '강렬한 느낌으로 정신을 깨우고 싶어요',
+                type: { '생강차': 1, '진저레몬티': 1 }
+            }
         ]
     },
     {
-        q: '당신이 바쁜 하루를 보낼 때, 어떻게 대처하나요?',
+        q: '바쁜 날이 예상될 때, 어떻게 준비하나요?',
         a: [
-            { answer: '차분하게 계획적으로 해결해요', type: ['호박차'] },
-            { answer: '균형 잡힌 사고로 여유롭게 처리해요', type: ['ABC 티'] },
-            { answer: '빠르고 효율적으로 해결해요', type: ['진저레몬티'] },
-            { answer: '강렬하게 집중하여 빠르게 처리해요', type: ['생강차'] }
+            {
+                answer: '차분하게 일의 우선순위를 정하고 계획을 세워요',
+                type: { '호박차': 1, '콩콩티': 1 }
+            },
+            {
+                answer: '균형 잡힌 일정을 세우고, 중간중간 쉬는 시간을 가져요',
+                type: { 'ABC티': 1, '쏙쏙티': 1 }
+            },
+            {
+                answer: '빠르게 처리하고, 효율적으로 시간 관리를 해요',
+                type: { '진저레몬티': 1, '밤비티': 1 }
+            },
+            {
+                answer: '집중해서 일에 몰두하며 빨리 끝내려고 노력해요',
+                type: { '생강차': 1, '대추생강차': 1 }
+            }
         ]
     },
     {
-        q: '스트레스가 많을 때 당신은 어떻게 이겨내나요?',
+        q: '스트레스가 많은 상황에서 당신은 어떻게 반응하나요?',
         a: [
-            { answer: '차분한 환경에서 천천히 마음을 다스려요', type: ['호박차'] },
-            { answer: '상쾌한 기운을 느끼며 기운을 차려요', type: ['진저레몬티'] },
-            { answer: '균형 잡힌 사고로 문제를 해결해요', type: ['ABC 티'] },
-            { answer: '강한 자극으로 정신을 확 깨워요', type: ['생강차'] }
+            {
+                answer: '조용한 시간을 가지며 내면을 다스려요',
+                type: { '호박차': 1, '쏙쏙티': 1 }
+            },
+            {
+                answer: '리프레시할 수 있는 활동을 하며 기분을 전환해요',
+                type: { '진저레몬티': 1, '밤비티': 1 }
+            },
+            {
+                answer: '객관적으로 문제를 분석하고 해결 방법을 찾아요',
+                type: { 'ABC티': 1, '콩콩티': 1 }
+            },
+            {
+                answer: '강한 자극이나 활동으로 스트레스를 풀어요',
+                type: { '생강차': 1, '대추생강차': 1 }
+            }
         ]
     },
     {
-        q: '친구들과 함께 있을 때 당신은 어떤 타입인가요?',
+        q: '당신은 대체로 어떤 스타일의 친구인가요?',
         a: [
-            { answer: '차분하고 안정감을 주는 타입', type: ['호박차'] },
-            { answer: '활기차고 에너지를 주는 타입', type: ['밤비티'] },
-            { answer: '실용적이고 든든한 친구', type: ['콩콩티'] },
-            { answer: '따뜻하고 배려심 깊은 타입', type: ['대추생강차'] }
+            {
+                answer: '편안한 분위기를 만들어주는 친구',
+                type: { '호박차': 1, '쏙쏙티': 1 }
+            },
+            {
+                answer: '활발하고 분위기를 주도하는 친구',
+                type: { '밤비티': 1, '진저레몬티': 1 }
+            },
+            {
+                answer: '실용적이고 조언을 아끼지 않는 친구',
+                type: { '콩콩티': 1, '대추생강차': 1 }
+            },
+            {
+                answer: '따뜻하고 배려심이 깊은 친구',
+                type: { '대추생강차': 1, 'ABC티': 1 }
+            }
         ]
     },
     {
-        q: '당신의 이상적인 휴식 시간은 어떻게 보내고 싶나요?',
+        q: '휴식을 취할 때, 당신이 가장 즐기는 방법은?',
         a: [
-            { answer: '달콤하고 부드러운 차와 함께 편안하게 쉬어요', type: ['쏙쏙티'] },
-            { answer: '상쾌하고 기분 좋은 분위기에서 휴식해요', type: ['밤비티'] },
-            { answer: '고소하고 든든한 맛을 즐기며 여유를 가져요', type: ['콩콩티'] },
-            { answer: '매콤한 차로 몸과 마음을 따뜻하게 하며 쉬어요', type: ['대추생강차'] }
+            {
+                answer: '달콤한 음료나 간식을 즐기며 휴식을 취해요',
+                type: { '쏙쏙티': 1, '호박차': 1 }
+            },
+            {
+                answer: '상쾌한 공기를 마시며 가벼운 산책을 해요',
+                type: { '밤비티': 1, '진저레몬티': 1 }
+            },
+            {
+                answer: '느긋하게 휴식을 취하며 몸과 마음을 안정시켜요',
+                type: { '콩콩티': 1, 'ABC티': 1 }
+            },
+            {
+                answer: '따뜻한 차를 마시며 편안한 시간을 가져요',
+                type: { '대추생강차': 1, '호박차': 1 }
+            }
         ]
     },
     {
-        q: '평소 생활에서 당신이 가장 중시하는 가치는 무엇인가요?',
+        q: '일상에서 가장 중요하게 생각하는 가치는 무엇인가요?',
         a: [
-            { answer: '달콤한 안정감과 일관성', type: ['쏙쏙티'] },
-            { answer: '활기차고 긍정적인 에너지', type: ['밤비티'] },
-            { answer: '실용적이고 실속 있는 선택', type: ['콩콩티'] },
-            { answer: '따뜻하고 균형 잡힌 삶', type: ['ABC 티'] }
+            {
+                answer: '안정감과 조화로운 삶',
+                type: { '쏙쏙티': 1, '호박차': 1 }
+            },
+            {
+                answer: '새로운 경험과 긍정적인 에너지',
+                type: { '밤비티': 1, '진저레몬티': 1 }
+            },
+            {
+                answer: '실용성과 효율성',
+                type: { '콩콩티': 1, 'ABC티': 1 }
+            },
+            {
+                answer: '따뜻함과 배려',
+                type: { '대추생강차': 1, 'ABC티': 1 }
+            }
         ]
     }
 ];
+
 
 let currentQuestion = 0;
 let scores = {
@@ -79,15 +176,12 @@ let scores = {
     '밤비티': 0,
     '콩콩티': 0,
     '대추생강차': 0,
-    'ABC 티': 0,
+    'ABC티': 0,
     '진저레몬티': 0,
     '호박차': 0,
     '생강차': 0
 };
 
-const totalQuestions = qnaList.length; // 총 질문 수
-
-// 퀴즈 시작
 function startQuiz() {
     document.getElementById('start-page').classList.add('hidden');
     document.getElementById('quiz-page').classList.remove('hidden');
@@ -104,15 +198,20 @@ function loadQuestion() {
         const btn = document.createElement('button');
         btn.innerText = answerObj.answer;
         btn.onclick = function () {
-            answerObj.type.forEach(function(teaType) {
-                scores[teaType] += 1;
+            Object.keys(answerObj.type).forEach(teaType => {
+                if (scores.hasOwnProperty(teaType)) {
+                    scores[teaType] += answerObj.type[teaType]; 
+                } else {
+                    console.warn(`키 ${teaType}가 scores에 존재하지 않습니다.`);
+                }
             });
-            nextQuestion(); // 답을 누르면 바로 다음 질문으로 넘어가도록 변경
+            nextQuestion();  
         };
         answerBox.appendChild(btn);
     });
 }
 
+// 다음 질문으로 이동
 function nextQuestion() {
     currentQuestion++;
 
@@ -124,11 +223,13 @@ function nextQuestion() {
 }
 
 function showResult() {
-    const result = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+    const maxScore = Math.max(...Object.values(scores));
+    const topResults = Object.keys(scores).filter(teaType => scores[teaType] === maxScore);
+    const result = topResults[Math.floor(Math.random() * topResults.length)];
     document.getElementById('result').innerText = result;
 
     const resultImage = document.getElementById('result-image');
-    const resultDescription = document.getElementById('result-description'); // 설명을 넣을 요소
+    const resultDescription = document.getElementById('result-description');
     switch(result) {
         case '쏙쏙티':
             resultImage.src = './image/ss.png';
@@ -146,9 +247,9 @@ function showResult() {
             resultImage.src = './image/ds.png';
             resultDescription.innerText = "당신은 따뜻하고 배려심이 깊은 성격입니다. 대추생강차처럼 은은한 달콤함과 깊은 따뜻함을 가지고 있어 주변에 온기를 전달합니다.";
             break;
-        case 'ABC 티':
+        case 'ABC티':
             resultImage.src = './image/abc.png';
-            resultDescription.innerText = "당신은 균형 잡히고 조화로운 성격입니다. 다양한 요소를 잘 조화시키며, ABC 티처럼 모든 면에서 균형을 잘 맞추는 사람입니다.";
+            resultDescription.innerText = "당신은 균형 잡히고 조화로운 성격입니다. 다양한 요소를 잘 조화시키며, ABC티처럼 모든 면에서 균형을 잘 맞추는 사람입니다.";
             break;
         case '진저레몬티':
             resultImage.src = './image/jl.png';
@@ -180,7 +281,7 @@ function restartQuiz() {
         '밤비티': 0,
         '콩콩티': 0,
         '대추생강차': 0,
-        'ABC 티': 0,
+        'ABC티': 0,
         '진저레몬티': 0,
         '호박차': 0,
         '생강차': 0
