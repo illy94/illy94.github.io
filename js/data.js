@@ -133,35 +133,35 @@ function showResult() {
     const resultDescription = document.getElementById('result-description'); // 설명을 넣을 요소
     switch(result) {
         case '쏙쏙티':
-            resultImage.src = '/image/쏙쏙티.png';
+            resultImage.src = '/image/ss.png';
             resultDescription.innerText = "당신은 달콤하고 부드러운 성격입니다. 안정적이고 꾸준한 것을 선호하며, 쏙쏙티처럼 사람들에게 편안함을 줍니다.";
             break;
         case '밤비티':
-            resultImage.src = '/image/밤비티.png';
+            resultImage.src = '/image/bb.png';
             resultDescription.innerText = "당신은 상쾌하고 활기찬 성격입니다. 주변에 긍정적인 에너지를 주며, 밤비티처럼 새콤하고 상쾌한 매력을 가지고 있습니다.";
             break;
         case '콩콩티':
-            resultImage.src = '/image/콩콩티.png';
+            resultImage.src = '/image/kk.png';
             resultDescription.innerText = "당신은 실용적이고 차분한 성격입니다. 콩콩티처럼 고소하고 든든한 성격으로, 주변 사람들에게 안정감을 주는 존재입니다.";
             break;
         case '대추생강차':
-            resultImage.src = '/image/대추생강차.png';
+            resultImage.src = '/image/ds.png';
             resultDescription.innerText = "당신은 따뜻하고 배려심이 깊은 성격입니다. 대추생강차처럼 은은한 달콤함과 깊은 따뜻함을 가지고 있어 주변에 온기를 전달합니다.";
             break;
         case 'ABC 티':
-            resultImage.src = '/image/ABC주스티.png';
+            resultImage.src = '/image/abc.png';
             resultDescription.innerText = "당신은 균형 잡히고 조화로운 성격입니다. 다양한 요소를 잘 조화시키며, ABC 티처럼 모든 면에서 균형을 잘 맞추는 사람입니다.";
             break;
         case '진저레몬티':
-            resultImage.src = '/image/진저레몬티.png';
+            resultImage.src = '/image/jl.png';
             resultDescription.innerText = "당신은 깔끔하고 상쾌한 성격입니다. 진저레몬티처럼 신선한 기운을 가지고 있으며, 활기찬 하루를 선호합니다.";
             break;
         case '호박차':
-            resultImage.src = '/image/호박차.png';
+            resultImage.src = '/image/hb.png';
             resultDescription.innerText = "당신은 달콤하고 따뜻한 성격입니다. 호박차처럼 포근하고 배려심이 많아, 다른 사람들에게 안정감을 제공합니다.";
             break;
         case '생강차':
-            resultImage.src = '/image/생강차.png';
+            resultImage.src = '/image/sg.png';
             resultDescription.innerText = "당신은 강렬하고 에너지 넘치는 성격입니다. 생강차처럼 강한 맛과 함께 활기차게 문제를 해결하며, 빠르게 움직이는 성향이 있습니다.";
             break;
         default:
