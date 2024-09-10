@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MBTI Tea Quiz</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* 반응형 레이아웃 */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .page {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #4CAF50;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #555;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .container {
+      width: 80%;
+      max-width: 600px;
+      background-color: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    #result-page img {
+      margin-top: 20px;
+    }
+
+    #restart-btn {
+      margin-top: 20px;
+    }
+
+    /* 공유 버튼 스타일 */
+    .share-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 5px; /* 간격을 좁게 */
+      margin-top: 20px;
+    }
+
+    .share-buttons button {
+      background: none; /* 배경색 제거 */
+      border: none;
+      padding: 5px; /* 버튼에 여백 */
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .share-buttons button:hover {
+      transform: scale(1.1); /* hover 시 살짝 확대 */
+      background-color: transparent; /* hover 시 배경색 제거 */
+    }
+
+    .share-buttons img {
+      width: 40px; /* 크기 조정 */
+      height: 40px;
+    }
+
+    /* 로고 스타일 */
+    .logo-bottom {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 시작 페이지 -->
+<div id="start-page" class="page">
+  <h1>TEA-B-TEA-I</h1>
+  <p>당신의 하루를 함께 할 차를 찾으러 떠나보세요!</p>
+  <button onclick="startQuiz()">Start Quiz</button>
+</div>
+
+<!-- 퀴즈 페이지 -->
+<div id="quiz-page" class="page hidden">
+  <div class="container">
+    <h2>TEA-B-TEA-I</h2>
+    <div id="question-box">
+      <p id="question"></p>
+    </div>
+    <div id="answer-box"></div>
+  </div>
+</div>
+
+<!-- 결과 페이지 -->
+<div id="result-page" class="page hidden">
+
+  <div class="container">
+  <h2>당신의 하루와 함께할 차는</h2>
+  <h1 id="result"></h1>
+  <h3 id="result-description"></h3>
+  <img id="result-image" src="" alt="Tea Image">
+  <button id="restart-btn" onclick="restartQuiz()">Restart</button>
+
+  <div class="row share_row pt-5 pb-4">
+    <div class="col-12 text_center mt-2">
+      <p>친구에게 공유하기</p>
+
+    <div class="share-buttons">
+      <!-- 인스타그램 공유 (링크 복사) -->
+      <button id="instagram-share-btn" onclick="shareInstagram()">
+        <img src="https://d2k6w3n3qf94c4.cloudfront.net/prod.static/common/img/SNS/share.19fc55c65e1d.svg" alt="Instagram Share">
+      </button>
+
+      <!-- 페이스북 공유 -->
+      <button id="facebook-share-btn" onclick="shareFacebook()">
+        <img src="https://d2k6w3n3qf94c4.cloudfront.net/prod.static/common/img/SNS/facebook.34d74b3dc187.svg" alt="Facebook Share">
+      </button>
+
+      <!-- 트위터(X) 공유 -->
+      <button id="twitter-share-btn" onclick="shareTwitter()">
+        <img src="https://d2k6w3n3qf94c4.cloudfront.net/prod.static/common/img/SNS/twitter.2761f4d7e098.svg" alt="Twitter Share">
+      </button>
+
+      <!-- 카카오톡 공유 -->
+      <button id="kakao-share-btn" onclick="shareKakao()">
+        <img src="https://d2k6w3n3qf94c4.cloudfront.net/prod.static/common/img/SNS/kakao.7f0f47e99a41.svg" alt="Kakao Share">
+      </button>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+
+<!-- 카카오톡 공유를 위한 스크립트 -->
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+<script>
+    // 카카오톡 공유를 위한 초기화
+    Kakao.init('YOUR_KAKAO_APP_KEY'); // 카카오 개발자 페이지에서 발급받은 앱 키로 변경
+
+    // 카카오톡 공유
+    function shareKakao() {
+        Kakao.Link.sendDefault({
+            objectType: 'feed',
+            content: {
+                title: 'Tea MBTI 결과',
+                description: document.getElementById('result').innerText + ' 결과가 나왔어요!',
+                imageUrl: document.getElementById('result-image').src, // 결과 이미지
+                link: {
+                    mobileWebUrl: window.location.href, // 현재 페이지 URL
+                    webUrl: window.location.href
+                }
+            }
+        });
+    }
+
+    // 페이스북 공유
+    function shareFacebook() {
+        const shareUrl = window.location.href;
+        window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl), 'facebook-share-dialog', 'width=800,height=600');
+    }
+
+    // 트위터(X) 공유
+    function shareTwitter() {
+        const resultText = document.getElementById('result').innerText + ' 결과가 나왔어요!';
+        const shareUrl = window.location.href;
+        window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(resultText) + '&url=' + encodeURIComponent(shareUrl), 'twitter-share-dialog', 'width=800,height=600');
+    }
+
+    // 인스타그램 공유 (링크 복사)
+    function shareInstagram() {
+        const shareUrl = window.location.href;
+        navigator.clipboard.writeText(shareUrl).then(() => {
+            alert('공유 링크가 복사되었습니다! 인스타그램에 붙여넣기 해주세요.');
+        }, () => {
+            alert('링크 복사에 실패했습니다.');
+        });
+    }
+</script>
+
+</body>
+</html>
