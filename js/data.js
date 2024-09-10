@@ -155,7 +155,7 @@ function showResult() {
             resultDescription.innerText = "당신은 깔끔하고 상쾌한 성격입니다. 진저레몬티처럼 신선한 기운을 가지고 있으며, 활기찬 하루를 선호합니다.";
             break;
         case '호박차':
-            resultImage.src = './image/hn.png';
+            resultImage.src = './image/hb.png';
             resultDescription.innerText = "당신은 달콤하고 따뜻한 성격입니다. 호박차처럼 포근하고 배려심이 많아, 다른 사람들에게 안정감을 제공합니다.";
             break;
         case '생강차':
