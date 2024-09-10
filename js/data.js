@@ -133,7 +133,7 @@ function showResult() {
     const resultDescription = document.getElementById('result-description'); // 설명을 넣을 요소
     switch(result) {
         case '쏙쏙티':
-            resultImage.src = './image/쏙쏙티.png';
+            resultImage.src = '.../image/쏙쏙티.png';
             resultDescription.innerText = "당신은 달콤하고 부드러운 성격입니다. 안정적이고 꾸준한 것을 선호하며, 쏙쏙티처럼 사람들에게 편안함을 줍니다.";
             break;
         case '밤비티':
